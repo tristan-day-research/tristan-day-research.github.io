@@ -1,23 +1,430 @@
-<!-- <h1>Tristan Day</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tristan Day</title>
+  <meta name="description" content="Tristan Day, AI alignment researcher working on mechanistic interpretability, LLM metacognition, persona representation, and AI consciousness indicators." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<p>
-I am an early researcher working on AI metacognition, interpretability,
-and model self-evaluation.
-</p>
+    :root {
+      --bg:       #F7F4EF;
+      --ink:      #1C1917;
+      --ink-mid:  #4A4540;
+      --ink-faint:#9A928A;
+      --accent:   #C4622D;   /* terracotta */
+      --rule:     #DDD8D0;
+    }
 
-<h2>Research</h2>
-<ul>
-  <li>
-    <b>Fine-Tuning Enhances Latent Metacognitive Capability in Language Models</b><br>
-    Accepted to the ICML 2026 Mechanistic Interpretability Workshop.
-  </li>
-</ul>
+    html { font-size: 18px; scroll-behavior: smooth; }
 
-<h2>Projects</h2>
-<p>Coming soon.</p>
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.75;
+      padding: 0 1.5rem;
+    }
 
-<h2>Contact</h2>
-<p>Email: your-email-here</p>
-<p>GitHub: <a href="https://github.com/YOUR-USERNAME">YOUR-USERNAME</a></p> -->
+    .container { max-width: 680px; margin: 0 auto; }
 
-Coming Soon!
+    /* ── Nav ── */
+    nav {
+      padding: 2rem 0 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 4rem;
+    }
+    .nav-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem; font-weight: 400;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-mid); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem; font-weight: 300;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--ink-faint); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.nav-cv { color: var(--accent); }
+
+    /* ── Hero ── */
+    .hero { margin-bottom: 5rem; }
+    .hero-name {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.7rem; font-weight: 600;
+      letter-spacing: 0.01em; margin-bottom: 0.4rem;
+    }
+    .hero-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; font-weight: 300;
+      color: var(--ink-faint); letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .hero-lead {
+      font-size: 1.15rem; font-weight: 300;
+      line-height: 1.6; color: var(--ink-mid); max-width: 580px;
+    }
+
+    /* ── Section ── */
+    section { margin-bottom: 4.5rem; }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+    .section-sub {
+      font-size: 0.84rem; color: var(--ink-faint);
+      font-style: italic; margin-bottom: 1.25rem; margin-top: -0.5rem;
+    }
+
+    /* ── Bio ── */
+    .bio-inner { display: flex; gap: 2rem; align-items: flex-start; }
+    .bio-photo {
+      flex-shrink: 0; width: 120px; height: 120px;
+      border-radius: 3px; background: var(--rule); object-fit: cover;
+    }
+    .bio-photo-placeholder {
+      flex-shrink: 0; width: 120px; height: 120px;
+      border-radius: 3px; background: var(--rule);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bio-photo-placeholder span {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      color: var(--ink-faint); text-align: center; line-height: 1.4;
+    }
+    .bio-text p { margin-bottom: 0.9rem; color: var(--ink-mid); }
+    .bio-text p:last-child { margin-bottom: 0; }
+
+    /* ── Research interests ── */
+    .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .interest-card { border-left: 2px solid var(--accent); padding-left: 1rem; }
+    .interest-card h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem;
+    }
+    .interest-card p { font-size: 0.85rem; color: var(--ink-mid); line-height: 1.6; }
+
+    /* ── Current projects ── */
+    .project { padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+    .project:first-of-type { border-top: 1px solid var(--rule); }
+    .project-meta {
+      font-family: 'DM Mono', monospace; font-size: 0.65rem;
+      color: var(--ink-faint); letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+    .project h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 1.1rem; font-weight: 600;
+      margin-bottom: 0.5rem; line-height: 1.3;
+    }
+    .project p { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.65; }
+    .project-links { margin-top: 0.7rem; }
+    .project-links a {
+      font-family: 'DM Mono', monospace; font-size: 0.63rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent); text-decoration: none;
+      border-bottom: 1px solid var(--rule); padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .project-links a:hover { border-color: var(--accent); }
+
+    /* ── Secondary (mini) projects ── */
+    .mini { padding: 1rem 0; border-bottom: 1px solid var(--rule); }
+    .mini:first-of-type { border-top: 1px solid var(--rule); }
+    .mini-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+    .mini-title { font-family: 'Source Serif 4', serif; font-size: 0.95rem; font-weight: 600; }
+    .mini-meta {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--ink-faint); white-space: nowrap;
+    }
+    .mini p { font-size: 0.83rem; color: var(--ink-mid); line-height: 1.55; margin-top: 0.2rem; }
+
+    /* ── Selected work ── */
+    .paper { padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
+    .paper:first-of-type { border-top: 1px solid var(--rule); }
+    .paper-venue {
+      font-family: 'DM Mono', monospace; font-size: 0.63rem;
+      color: var(--accent); letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 0.35rem;
+    }
+    .paper h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.95rem; font-weight: 400;
+      line-height: 1.45; margin-bottom: 0.3rem;
+    }
+    .paper-authors { font-size: 0.82rem; color: var(--ink-faint); margin-bottom: 0.5rem; }
+    .paper-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .paper-links a {
+      font-family: 'DM Mono', monospace; font-size: 0.63rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--ink-mid); text-decoration: none;
+      border-bottom: 1px solid var(--rule); padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .paper-links a:hover { color: var(--accent); border-color: var(--accent); }
+    .fine-print {
+      font-family: 'DM Mono', monospace; font-size: 0.62rem;
+      letter-spacing: 0.04em; color: var(--ink-faint); margin-top: 1rem;
+    }
+
+    /* ── Background ── */
+    .background p { color: var(--ink-mid); font-size: 0.9rem; margin-bottom: 0.9rem; }
+    .background p:last-child { margin-bottom: 0; }
+
+    /* ── Contact ── */
+    .contact-block { background: white; border: 1px solid var(--rule); border-radius: 3px; padding: 2rem; }
+    .contact-block p { color: var(--ink-mid); margin-bottom: 1.25rem; font-size: 0.92rem; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .contact-link {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--ink); text-decoration: none;
+      border: 1px solid var(--rule); border-radius: 2px;
+      padding: 0.4rem 0.85rem; transition: border-color 0.2s, color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+    .contact-link.primary { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--rule); padding: 2rem 0 3rem;
+      font-family: 'DM Mono', monospace; font-size: 0.63rem;
+      color: var(--ink-faint); letter-spacing: 0.04em;
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+
+    @media (max-width: 540px) {
+      .bio-inner { flex-direction: column; }
+      .interests-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; }
+      .mini-head { flex-direction: column; gap: 0.1rem; }
+      footer { flex-direction: column; gap: 0.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Nav -->
+  <nav>
+    <a class="nav-name" href="#">Tristan Day</a>
+    <ul class="nav-links">
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <!-- Put your compiled CV PDF at assets/Tristan_Day_CV.pdf -->
+      <li><a class="nav-cv" href="assets/Tristan_Day_CV.pdf">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="hero-name">Tristan Day</p>
+    <p class="hero-role">AI Alignment Researcher &nbsp;·&nbsp; Research Fellow, CBAI &nbsp;·&nbsp; Cambridge, MA</p>
+    <p class="hero-lead">I study what language models represent about themselves: metacognition, persona structure, and indicators of consciousness, using mechanistic interpretability.</p>
+  </div>
+
+  <!-- Bio -->
+  <section id="bio">
+    <div class="section-label">About</div>
+    <div class="bio-inner">
+      <!-- Replace this placeholder with: <img class="bio-photo" src="assets/photo.jpg" alt="Tristan Day" /> -->
+      <img class="bio-photo" src="assets/headshot.png" alt="Tristan Day" />
+      <!-- <div class="bio-photo-placeholder">
+        <span>your<br/>photo<br/>here</span>
+      </div> -->
+      <div class="bio-text">
+        <p>I'm an AI alignment researcher and Research Fellow at the Cambridge Boston Alignment Initiative (CBAI). My work asks when a model's self-reports and persona-dependent behavior reflect shallow stylistic patterns versus deeper internal representations, studied through probing, activation analysis, representational similarity methods, and behavioral experiments. My current CBAI work is in collaboration with mentor Laura Ruis (UCL/MIT) and collarborator Belinda Li (MIT / Antrhopic).</p>
+        <p>I'm based at CBAI in Harvard Square and take part in groups such asthe Harvard AI Safety Student Team (AISST). My background spans machine learning, computational neuroscience, graph and spectral analysis of brain networks, cognitive science, and philosophy of mind. 
+        </p>
+          <!-- Outside research, I make music with Ableton and guitar.</p> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Interests -->
+  <!-- <section id="interests">
+    <div class="section-label">Research Interests</div>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <h3>Mechanistic Interpretability</h3>
+        <p>Understanding the internal computations of language models: how representations form, route, and interact across layers.</p>
+      </div>
+      <div class="interest-card">
+        <h3>LLM Metacognition</h3>
+        <p>Whether models have latent access to their own uncertainty, and whether that access can be trained into reliable self-evaluation.</p>
+      </div>
+      <div class="interest-card">
+        <h3>AI Consciousness Indicators</h3>
+        <p>Operationalizing consciousness-relevant properties into tests that can be evaluated in current AI systems, drawing on theories from philosophy of mind.</p>
+      </div>
+      <div class="interest-card">
+        <h3>Persona &amp; Identity in LLMs</h3>
+        <p>How persona and identity are represented across model layers, and what it means for a model to "have" a persona at all.</p>
+      </div>
+    </div>
+  </section> -->
+
+
+  <section id="interests">
+    <div class="section-label">Research Focus</div>
+    <p class="section-sub">
+      Mechanistic interpretability · LLM metacognition · persona representations · AI consciousness indicators · computational neuroscience
+    </p>
+  </section>
+
+  <!-- Current Projects -->
+  <section id="projects">
+    <div class="section-label">Current Projects</div>
+
+    <div class="project">
+      <div class="project-meta">Active &nbsp;·&nbsp; CBAI 2026&ndash;Present</div>
+      <h3>How Deep Do Personas Go?</h3>
+      <p>A mechanistic-interpretability investigation into persona representation and cross-persona privileged access in language models. Using Llama 3.1 8B and Dolphin 2.8 24B Mistral, I study how persona identity is represented across the network. Preliminary analyses suggest persona identity is linearly separable in early layers, with mid-layer activation divergence consistent with persona-dependent representational differences. Methods: linear probes, CKA/SVCCA/Procrustes, activation patching, logit lens, and SelfIE/Patchscopes.</p>
+      <!-- When the write-up is live, uncomment: -->
+      <!-- <div class="project-links"><a href="posts/personas.html">Read the write-up &rarr;</a></div> -->
+    </div>
+
+    <div class="project">
+      <div class="project-meta">Accepted &nbsp;·&nbsp; SPAR 2025&ndash;2026</div>
+      <h3>Latent Metacognitive Capability in Language Models</h3>
+      <p>An investigation into whether LLMs contain pre-existing internal structure supporting self-evaluation of answer uncertainty, and whether fine-tuning routes (rather than installs) this structure into confidence reports. Accepted to the ICML 2026 Mechanistic Interpretability Workshop.</p>
+      <!-- <div class="project-links"><a href="posts/metacognition.html">Read the write-up &rarr;</a></div> -->
+    </div>
+
+    <div class="project">
+      <div class="project-meta">Active &nbsp;·&nbsp; Sentient Futures 2026&ndash;Present</div>
+      <h3>Consciousness Indicators for AI Systems</h3>
+      <p>Operationalizing indicators of consciousness into properties that can be evaluated in current AI systems, building on the Butlin&ndash;Long et al. indicator framework. Scoping candidate tests for properties such as world modeling, self-modeling, metacognition, and valenced states. In collaboration with Chris Percy.</p>
+      <!-- <div class="project-links"><a href="posts/consciousness-indicators.html">Read the write-up &rarr;</a></div> -->
+    </div>
+
+    <div class="project">
+      <div class="project-meta">Ongoing &nbsp;·&nbsp; 2022&ndash;Present</div>
+      <h3>Connectome Harmonics</h3>
+      <p>Leading an international computational-neuroscience collaboration analyzing University of Oxford diffusion-MRI data to characterize changing brain-network structure over the lifespan, using spectral graph methods.</p>
+      <!-- <div class="project-links"><a href="posts/connectome-harmonics.html">Read the write-up &rarr;</a></div> -->
+    </div>
+  </section>
+
+  <!-- Selected Work -->
+  <section id="work">
+    <div class="section-label">Selected Work</div>
+
+    <div class="paper">
+      <div class="paper-venue">ICML 2026 &middot; Mechanistic Interpretability Workshop</div>
+      <h3>Fine-Tuning Enhances Latent Metacognitive Capability in Language Models</h3>
+      <p class="paper-authors">Tristan Day, Christopher Ackerman</p>
+      <div class="paper-links">
+        <!-- Replace # with the hosted PDF / OpenReview / repo URLs -->
+        <a href="#" title="Paper PDF">Paper &rarr;</a>
+        <a href="#" title="OpenReview">OpenReview &rarr;</a>
+        <a href="https://github.com/tristan-day-research" target="_blank" rel="noopener noreferrer">Code &rarr;</a>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-venue">CBAI &middot; Work-in-Progress Poster &middot; April 2026</div>
+      <h3>How Deep Do Personas Go? A Mechanistic Account of Persona Representation in Language Models</h3>
+      <p class="paper-authors">Tristan Day</p>
+      <div class="paper-links">
+        <a href="#" title="Poster PDF">Poster &rarr;</a>
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <!-- Background -->
+  <section id="background" class="background">
+    <div class="section-label">Background</div>
+    <p>Teaching Assistant, Advanced Neurophysiological Psychology (400-level), Portland State University, 2019. Science-outreach educator with Northwest Noggin, 2017&ndash;2021, teaching neuroscience to K&ndash;12 students and adults in schools, public science events, and correctional facilities. Poster presenter, Society for Neuroscience Annual Meeting, 2018 and 2019.</p>
+    <p>I also have a long-standing interest in contemplative traditions and philosophy of mind, including meditation practice and Buddhist thought. I have completed a 10-day silent Vipassana meditation and several other multi-day retereats in the Therevada and Tibetan Buddhist traditions.</p>
+  </section>
+
+
+
+  <!-- Additional Technical Projects (secondary) -->
+  <section id="other-projects">
+    <div class="section-label">Additional Technical Projects</div>
+    <p class="section-sub">Exploratory, coursework, and competition projects.</p>
+
+    <div class="mini">
+      <div class="mini-head"><span class="mini-title">ARC-Style Reasoning</span><span class="mini-meta">2024 &middot; Exploratory</span></div>
+      <p>Neuro-symbolic approaches to ARC-style reasoning tasks, combining learned pattern recognition with explicit rule extraction to probe limitations of current reasoning systems.</p>
+    </div>
+    <div class="mini">
+      <div class="mini-head"><span class="mini-title">EEG Seizure Detection</span><span class="mini-meta">2024 &middot; Exploratory</span></div>
+      <p>Preliminary ML components for EEG seizure classification (Kaggle), including transformer and VAE-inspired approaches to Fourier-transformed time-series data.</p>
+    </div>
+    <div class="mini">
+      <div class="mini-head"><span class="mini-title">Multiple Realizability via Clustering Neural Representations</span><span class="mini-meta">2023 &middot; Coursework</span></div>
+      <p>Connected representation analysis (Procrustes, PCA, clustering) to questions about substrate independence and computational theories of mind.</p>
+    </div>
+    <div class="mini">
+      <div class="mini-head"><span class="mini-title">Spiking Neural Networks</span><span class="mini-meta">2022 &middot; Course Project</span></div>
+      <p>Replicated biologically inspired spiking-neural-network methods for image classification.</p>
+    </div>
+    <div class="mini">
+      <div class="mini-head"><span class="mini-title">Deep RL Agent for Atari</span><span class="mini-meta">2022</span></div>
+      <p>Implemented and trained a deep reinforcement learning agent for Atari-style environments.</p>
+    </div>
+    <div class="mini">
+      <div class="mini-head"><span class="mini-title">Public Transportation Data Pipeline</span><span class="mini-meta">2022</span></div>
+      <p>End-to-end data pipeline (Kafka, cloud infrastructure, PostgreSQL, map visualization) for public-transit data.</p>
+    </div>
+    <div class="mini">
+      <div class="mini-head"><span class="mini-title">Early DALL&middot;E Replication</span><span class="mini-meta">2021</span></div>
+      <p>Replicated aspects of an early text-to-image architecture using variational autoencoders, shortly after the original work appeared.</p>
+    </div>
+    <div class="mini">
+      <div class="mini-head"><span class="mini-title">Pro-environmental Behavior Simulation</span><span class="mini-meta">2019</span></div>
+      <p>NetLogo agent-based model of incentive dynamics and pro-environmental behavior.</p>
+    </div>
+  </section>
+
+
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <div class="contact-block">
+      <p>I'm glad to hear from researchers working on interpretability, AI welfare, or AI consciousness. Feel free to reach out.</p>
+      <div class="contact-links">
+        <a class="contact-link primary" href="assets/Tristan_Day_CV.pdf">CV (PDF)</a>
+        <a class="contact-link" href="mailto:tristan.julian.day@gmail.com">Email</a>
+        <a class="contact-link" href="https://github.com/tristan-day-research" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <!-- Verify this LinkedIn handle before publishing -->
+        <a class="contact-link" href="https://www.linkedin.com/in/tristan-day-research" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span>Tristan Day &nbsp;&middot;&nbsp; Cambridge, MA</span>
+    <span>Updated June 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
