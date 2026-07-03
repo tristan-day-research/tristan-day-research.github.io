@@ -168,7 +168,12 @@
       font-size: 0.95rem; font-weight: 400;
       line-height: 1.45; margin-bottom: 0.3rem;
     }
+    /* Featured papers — slightly larger */
+    .paper.featured .paper-venue { font-size: 0.68rem; }
+    .paper.featured h3 { font-size: 1.15rem; font-weight: 600; }
+    .paper.featured .paper-authors { font-size: 0.88rem; }
     .paper-authors { font-size: 0.82rem; color: var(--ink-faint); margin-bottom: 0.5rem; }
+    .paper-desc { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.65; margin-bottom: 0.7rem; }
     .paper-links { display: flex; gap: 1rem; flex-wrap: wrap; }
     .paper-links a {
       font-family: 'DM Mono', monospace; font-size: 0.63rem;
@@ -227,7 +232,6 @@
     <a class="nav-name" href="#">Tristan Day</a>
     <ul class="nav-links">
       <li><a href="#interests">Interests</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
       <!-- Put your compiled CV PDF at assets/Tristan_Day_CV.pdf -->
@@ -252,10 +256,11 @@
         <span>your<br/>photo<br/>here</span>
       </div> -->
       <div class="bio-text">
-        <p>I'm an AI alignment researcher and Research Fellow at the Cambridge Boston Alignment Initiative (CBAI). My work asks when a model's self-reports and persona-dependent behavior reflect shallow stylistic patterns versus deeper internal representations, studied through behavorial experiments and mechanistic interpretability. </p>
-        <p>I'm currently based in Cambridge, MA and take part in groups such as the Harvard AI Safety Student Team (AISST). My current CBAI work is in collaboration with mentor Laura Ruis (UCL/MIT), and collaborators Belinda Li (MIT / Anthropic) and Dmitrii Troitskii (CBAI). I recently worked with SPAR mentor Christopher Ackerman to investigate latent metacognitive capability in language models. </p>
+        <p>I'm a Research Fellow at the Cambridge Boston Alignment Initiative (CBAI). My work asks when a model's self-reports and persona-dependent behavior reflect shallow stylistic patterns versus deeper internal representations, studied through behavorial experiments and mechanistic interpretability. I also study metacognition and self-modeling in language models, am starting a project to operationalize consciousness indicators for AI systems, and have research experience in neuroscience.    </p>
         <p>My background spans the bredth of cognitive science: computational neuroscience, complexity science, psychology, and philosophy of mind. </p>
-        <p>Outside of research, I enjoy meditation, philosophy, occasionally making music, and travel. I've been to 17 countries so far. 
+        <p>I'm currently based in Cambridge, MA and take part in groups such as the Harvard AI Safety Student Team (AISST). My current CBAI work is in collaboration with mentor Laura Ruis (UCL/MIT), and collaborators Belinda Li (MIT / Anthropic) and Dmitrii Troitskii (CBAI). I recently worked with SPAR mentor Christopher Ackerman to investigate latent metacognitive capability in language models. </p>
+  
+        <p>Outside of research, I enjoy philosophy, meditation, occasionally making music, and travel. I've been to 17 countries so far. 
         </p>
           <!-- Outside research, I make music with Ableton and guitar.</p> -->
       </div>
@@ -286,30 +291,37 @@
   </section> -->
 
 
-  <section id="interests">
+  <!-- <section id="interests">
     <div class="section-label">Research Focus</div>
     <p class="section-sub">
       Mechanistic interpretability · LLM metacognition · persona representations · AI consciousness indicators · computational neuroscience
     </p>
-  </section>
+  </section> -->
 
-  <!-- Current Projects -->
-  <section id="projects">
-    <div class="section-label">Current Projects</div>
+  <!-- Selected Work -->
+  <section id="work">
+    <div class="section-label">Selected Work</div>
 
-    <div class="project">
-      <div class="project-meta">Active &nbsp;·&nbsp; CBAI 2026&ndash;Present</div>
-      <h3>How Deep Do Personas Go?</h3>
-      <p>A mechanistic-interpretability investigation into persona representation and cross-persona privileged access in language models. Using Llama 3.1 8B and Dolphin 2.8 24B Mistral, I study how persona identity is represented across the network. Preliminary analyses suggest persona identity is linearly separable in early layers, with mid-layer activation divergence consistent with persona-dependent representational differences. Methods: linear probes, CKA/SVCCA/Procrustes, activation patching, logit lens, and SelfIE/Patchscopes.</p>
-      <!-- When the write-up is live, uncomment: -->
-      <!-- <div class="project-links"><a href="posts/personas.html">Read the write-up &rarr;</a></div> -->
+    <div class="paper featured">
+      <div class="paper-venue">ICML 2026 &middot; Mechanistic Interpretability Workshop</div>
+      <h3>Fine-Tuning Enhances Latent Metacognitive Capability in Language Models</h3>
+      <p class="paper-authors">Tristan Day, Christopher Ackerman</p>
+      <p class="paper-desc">An investigation into whether LLMs contain pre-existing internal structure supporting self-evaluation of answer uncertainty, and whether fine-tuning routes (rather than installs) this structure into confidence reports.</p>
+      <div class="paper-links">
+        <a href="assets/Fine-Tuning%20Enhances%20Latent%20Metacognitive%20Capability%20in%20Language%20Models.pdf" target="_blank" rel="noopener noreferrer" title="Paper PDF">Paper &rarr;</a>
+        <a href="assets/ICML%20Poster%20Metacognition%20is%20latent%20in%20base%20models%20and%20enhanced%20by%20post-training%20and%20fine-tuning.pdf" target="_blank" rel="noopener noreferrer" title="ICML Poster PDF">Poster &rarr;</a>
+        <a href="https://github.com/tristan-day-research/llm-metacognition" target="_blank" rel="noopener noreferrer">Code &rarr;</a>
+      </div>
     </div>
 
-    <div class="project">
-      <div class="project-meta">Accepted &nbsp;·&nbsp; SPAR 2025&ndash;2026</div>
-      <h3>Latent Metacognitive Capability in Language Models</h3>
-      <p>An investigation into whether LLMs contain pre-existing internal structure supporting self-evaluation of answer uncertainty, and whether fine-tuning routes (rather than installs) this structure into confidence reports. Accepted to the ICML 2026 Mechanistic Interpretability Workshop.</p>
-      <!-- <div class="project-links"><a href="posts/metacognition.html">Read the write-up &rarr;</a></div> -->
+    <div class="paper featured">
+      <div class="paper-venue">CBAI &middot; Work-in-Progress Poster &middot; April 2026</div>
+      <h3>How Deep Do Personas Go? A Mechanistic Account of Persona Representation in Language Models</h3>
+      <p class="paper-authors">Tristan Day</p>
+      <p class="paper-desc">A mechanistic-interpretability investigation into persona representation and cross-persona privileged access in language models. Using Llama 3.1 8B and Dolphin 2.8 24B Mistral, I study how persona identity is represented across the network. Preliminary analyses suggest persona identity is linearly separable in early layers, with mid-layer activation divergence consistent with persona-dependent representational differences. Methods: linear probes, CKA/SVCCA/Procrustes, activation patching, logit lens, and SelfIE/Patchscopes.</p>
+      <div class="paper-links">
+        <a href="assets/CBAI%20Poster%20of%20Tristan%20Day.pdf" target="_blank" rel="noopener noreferrer" title="Poster PDF">Poster &rarr;</a>
+      </div>
     </div>
 
     <div class="project">
@@ -325,33 +337,6 @@
       <p>Leading an international computational-neuroscience collaboration analyzing University of Oxford diffusion-MRI data to characterize changing brain-network structure over the lifespan, using spectral graph methods.</p>
       <!-- <div class="project-links"><a href="posts/connectome-harmonics.html">Read the write-up &rarr;</a></div> -->
     </div>
-  </section>
-
-  <!-- Selected Work -->
-  <section id="work">
-    <div class="section-label">Selected Work</div>
-
-    <div class="paper">
-      <div class="paper-venue">ICML 2026 &middot; Mechanistic Interpretability Workshop</div>
-      <h3>Fine-Tuning Enhances Latent Metacognitive Capability in Language Models</h3>
-      <p class="paper-authors">Tristan Day, Christopher Ackerman</p>
-      <div class="paper-links">
-        <a href="assets/Fine-Tuning%20Enhances%20Latent%20Metacognitive%20Capability%20in%20Language%20Models.pdf" target="_blank" rel="noopener noreferrer" title="Paper PDF">Paper &rarr;</a>
-        <a href="assets/ICML%20Poster%20Metacognition%20is%20latent%20in%20base%20models%20and%20enhanced%20by%20post-training%20and%20fine-tuning.pdf" target="_blank" rel="noopener noreferrer" title="ICML Poster PDF">Poster &rarr;</a>
-        <a href="https://github.com/tristan-day-research/llm-metacognition" target="_blank" rel="noopener noreferrer">Code &rarr;</a>
-      </div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-venue">CBAI &middot; Work-in-Progress Poster &middot; April 2026</div>
-      <h3>How Deep Do Personas Go? A Mechanistic Account of Persona Representation in Language Models</h3>
-      <p class="paper-authors">Tristan Day</p>
-      <div class="paper-links">
-        <a href="assets/CBAI%20Poster%20of%20Tristan%20Day.pdf" target="_blank" rel="noopener noreferrer" title="Poster PDF">Poster &rarr;</a>
-      </div>
-    </div>
-
-
   </section>
 
 
